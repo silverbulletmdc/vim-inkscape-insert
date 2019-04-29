@@ -6,7 +6,7 @@ function! ink#Ink(image)
 	if !isdirectory(g:inkscape_graphs_dir)
 	    call mkdir(g:inkscape_graphs_dir, "p")
 	endif
-	let b:inline = '![' . a:image . ']('. g:inkscape_graphs_dir . a:image . '.png)\'
+	let b:inline = '![' . a:image . ']('. g:inkscape_graphs_dir . a:image . '.png)'
 	call append(line('.'),b:inline)
 	normal jo
 	if filereadable(expand("~/.config/inkscape/templates/default.svg"))
@@ -17,6 +17,6 @@ function! ink#Ink(image)
 		finish
 	endif
 	exe ":!inkscape" g:inkscape_graphs_dir . a:image . ".svg"
-	exe ":!inkscape" g:inkscape_graphs_dir . a:image . ".svg" -e g:inkscape_graphs_dir . a:image . ".png" --without-gui
+	exe ":!inkscape" g:inkscape_graphs_dir . a:image . ".svg" . " -e " g:inkscape_graphs_dir . a:image . ".png" "--without-gui"
 endfunction
 
