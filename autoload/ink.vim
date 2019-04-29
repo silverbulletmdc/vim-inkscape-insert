@@ -16,7 +16,7 @@ function! ink#Ink(image)
 	else 
 		finish
 	endif
-	exe ":!inkscape" g:inkscape_graphs_dir . a:image . ".svg"
-	exe ":!inkscape" g:inkscape_graphs_dir . a:image . ".svg" . " -e " g:inkscape_graphs_dir . a:image . ".png" "--without-gui"
+	exe ":!export PATH=/usr/bin/:${PATH} && inkscape" g:inkscape_graphs_dir . a:image . ".svg"
+	exe ":!inkscape" g:inkscape_graphs_dir . a:image . ".svg" "-e" g:inkscape_graphs_dir . a:image . ".png" "--without-gui" "-D"
 endfunction
 
