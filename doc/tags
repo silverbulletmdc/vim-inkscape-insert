@@ -1,0 +1,3 @@
+:Ink	vim-inkscape-insert.txt	/*:Ink*
+g:inkscape_graphs_dir	vim-inkscape-insert.txt	/*g:inkscape_graphs_dir*
+vim-inkscape-insert	vim-inkscape-insert.txt	/*vim-inkscape-insert*
